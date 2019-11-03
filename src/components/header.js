@@ -1,7 +1,10 @@
 import React from "react"
+import ForkOnGithub from "./ForkOnGithub"
 
 const Header = () => (
-  <header></header>
+  <div className="pt-10">
+    <ForkOnGithub />
+  </div>
 )
 
 export default Header
