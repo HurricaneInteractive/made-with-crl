@@ -60,9 +60,9 @@ export const PageTemplate = ({ data: { mdx } }) => {
                           <div className="flex bg-gray-800 px-4 p-3">
                             <p className="flex-grow">{ installText(install, method) }</p>
                             <CopyToClipboard text={ installText(install, method) }>
-                              <a href="#" onClick={(e) => { e.preventDefault() }}>
+                              <button type="button" onClick={(e) => { e.preventDefault() }}>
                                 <Copy />
-                              </a>
+                              </button>
                             </CopyToClipboard>
                           </div>
                         </div>
