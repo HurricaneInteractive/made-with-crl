@@ -1,5 +1,69 @@
 @tailwind base;
 
+body {
+  @apply .bg-gray-900 .text-white .p-8;
+}
+
+.pill {
+  @apply .border .rounded .border-gray-600 .bg-gray-800 .text-gray-300;
+  @apply .block .px-2 .py-1;
+}
+
+.card-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-height: 24px;        /* fallback */
+  max-height: calc(24px * 3);       /* fallback */
+}
+
 @tailwind components;
 
 @tailwind utilities;
+
+.github-corner .octo-arm {
+  transform-origin: 130px 106px;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+
+  0%,
+  100% {
+    transform: rotate(0)
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg)
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg)
+  }
+}
+
+@media (max-width:500px) {
+  .github-corner:hover .octo-arm {
+    animation: none
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+  }
+}
+
+.github-corner svg {
+  @apply .text-gray-900;
+  fill: #A0AEC0;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+}
