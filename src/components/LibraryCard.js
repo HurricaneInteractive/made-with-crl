@@ -17,12 +17,12 @@ const LibraryCard = ({ slug, title, description, demo, github, npm }) => (
             <div className="flex flex-grow">
               { demo && (
                 <a href={demo} className="mr-3" target="_blank" rel="noopener noreferrer">
-                  <GitHub />
+                  <Globe />
                 </a>
               ) }
               { github && (
                 <a href={github} className="mr-3" target="_blank" rel="noopener noreferrer">
-                  <Globe />
+                  <GitHub />
                 </a>
               ) }
               { npm && (
