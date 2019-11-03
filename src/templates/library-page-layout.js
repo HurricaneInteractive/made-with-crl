@@ -18,7 +18,7 @@ export const PageTemplate = ({ data: { mdx } }) => {
 
   return (
     <Layout>
-      <SEO />
+      <SEO description={description} title={title} />
       <div className="mx-auto w-full md:w-3/5">
         <div className="mb-5 pb-3 border-b border-gray-800 text-gray-500">
           <Link to="/" className="inline-flex"><ChevronLeft /> Back to home</Link>
