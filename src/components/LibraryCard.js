@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { GitHub, Globe, Download, Eye } from "react-feather"
 
 const LibraryCard = ({ slug, title, description, demo, github, npm }) => (
-  <div class="w-full md:w-1/4 px-2 mb-5">
+  <div className="w-full md:w-1/4 px-2 mb-5">
     <div className="h-full p-6 pb-16 rounded bg-gray-800 relative">
       <h3 className="font-bold text-lg mb-5">{title}</h3>
       {

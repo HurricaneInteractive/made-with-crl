@@ -11,8 +11,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <div className="md:flex">
-        <div class="w-full">
-          <div class="md:flex -mx-2">
+        <div className="w-full">
+          <div className="md:flex -mx-2">
             {
               libraries && libraries.map(({ node: library }) => (
                 <LibraryCard slug={library.fields.slug} {...library.frontmatter} key={library.id} />
