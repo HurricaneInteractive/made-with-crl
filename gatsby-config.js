@@ -16,7 +16,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#1A202C`,
         theme_color: `#1A202C`,
-        display: `minimal-ui`
+        display: `minimal-ui`,
       },
     },
     `gatsby-plugin-postcss`,
@@ -32,9 +32,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-114425721-6",
-        head: false
-      }
-    }
+        head: false,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

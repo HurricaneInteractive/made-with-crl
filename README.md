@@ -9,11 +9,11 @@ This repo is the showcase website for [create-react-library](https://github.com/
 To add your own library to the project;
 
 1. Fork the project
-3. Create a page under [content](/content/libraries). For example, `package-name.mdx`
-2. Use the [library template](/template/library.mdx) as a base
-3. Enter (as a minimum) `title`, `description`, `github`
-4. Push changes to your forked repo
-5. Open a PR
+2. Create a page under [content](/content/libraries). For example, `package-name.mdx`
+3. Use the [library template](/template/library.mdx) as a base
+4. Enter (as a minimum) `title`, `description`, `github`
+5. Push changes to your forked repo
+6. Open a PR
 
 The library information will be reviewed and then merged in.
 
