@@ -23,11 +23,18 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        display: `minimal-ui`
       },
     },
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-mdx`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "libraries",
+        path: `${__dirname}/content/libraries/`,
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
