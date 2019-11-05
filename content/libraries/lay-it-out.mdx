@@ -1,0 +1,155 @@
+---
+title: lay-it-out
+description: React HOC and helper for complex layouts
+github: https://github.com/christianheyn/lay-it-out
+demo: https://christianheyn.github.io/lay-it-out/
+npm: https://www.npmjs.com/package/lay-it-out
+install: lay-it-out
+tags:
+  - react
+  - layout
+  - hoc
+  - children
+  - template
+---
+
+
+[![NPM](https://img.shields.io/npm/v/lay-it-out.svg)](https://www.npmjs.com/package/lay-it-out) [![Build Status](https://travis-ci.org/christianheyn/lay-it-out.svg?branch=master)](https://travis-ci.org/christianheyn/lay-it-out)
+
+> React HOC and helper for complex layouts
+
+When layouts get complex and you have to write a lot of jsx over and over again, this approach may help reuse layouts in a readable way.
+
+_Also tested with SSR (next.js). More test coming soon._
+
+_If you tried this package with other SSR methods or with `react-native` , please let me know if it's work ;)_
+
+## Install
+
+```bash
+npm install --save lay-it-out
+```
+
+## Usage
+
+Create a layout:
+```jsx
+// Layout.js
+import React from 'react'
+import { withLayout } from 'lay-it-out';
+
+const LayoutTemplate = ({ child }) => (
+    <div className="layout-xyz">
+        <header>{ child.header }</header>
+        { child.intro }
+        <aside>
+            { child.sidebar }
+            <div className="special">
+                { child.specialPlace }
+            </div>
+        </aside>
+        <footer>{ child.creditNotes }</footer>
+    </div>
+);
+
+export const Layout = withLayout(LayoutTemplate);
+```
+Use your layout like this:
+```jsx
+// App.js
+import React from 'react'
+import { Place } from 'lay-it-out';
+import { Layout } from './Layout';
+
+const App = () => (
+    <Layout>
+        <Place toBe="header">
+            <h1>Here is the header</h1>
+        </Place>
+
+        <Place toBe="intro">
+            <h2>intro headline</h2>
+            <p>intro text</p>
+        </Place>
+
+        <Place toBe="sidebar">
+            <h3>Sidebar</h3>
+            <ul>
+                <li>link1</li>
+                <li>link2</li>
+                <li>link3</li>
+            </ul>
+        </Place>
+
+        <Place toBe="specialPlace">
+            <h4>specialPlace</h4>
+            <p>special text</p>
+        </Place>
+
+        <Place toBe="creditNotes">
+            Thanks for watching.
+        </Place>
+    </Layout>
+);
+
+```
+___
+
+## additional props
+
+It's possible to pass additional props to your layout.
+For example to toggle stuff:
+
+```jsx
+// Layout.js
+import React from 'react'
+import { withLayout } from 'lay-it-out';
+
+const LayoutTemplate = ({ child, hasSidebar, className }) => (
+    <div className={`layout-xyz ${className}`}>
+        <header>{ child.header }</header>
+        { child.intro }
+        {
+            hasSidebar
+            && (<aside>{ child.sidebar }</aside>)
+        }
+        <footer>{ child.creditNotes }</footer>
+    </div>
+);
+
+export const Layout = withLayout(LayoutTemplate);
+```
+
+```jsx
+// App.js
+const App = () => (
+    <Layout className="additional-classname" hasSidebar>
+        <Place toBe="header">
+            ...
+```
+
+___
+
+## collision with prop name "child"
+You can set an option object to prevent prop name collision of "child".
+```jsx
+// Layout.js
+import React from 'react'
+import { withLayout } from 'lay-it-out';
+
+const LayoutTemplate = ({ myCustomPropName }) => (
+    <div className="layout-xyz">
+        <header>{ myCustomPropName.header }</header>
+        <aside>{ myCustomPropName.sidebar }</aside>
+        <footer>{ myCustomPropName.creditNotes }</footer>
+    </div>
+);
+
+export const Layout = withLayout(
+    LayoutTemplate,
+    { customChildPropName: 'myCustomPropName' },
+);
+```
+## License
+
+MIT © [christianheyn](https://github.com/christianheyn)
