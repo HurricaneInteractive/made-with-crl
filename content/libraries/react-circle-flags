@@ -1,0 +1,14 @@
+---
+title: react-circle-flags
+description: :rocket: A React wrapper for: https://hatscripts.github.io/circle-flags with a collection of 300+ minimal circular SVG country flags
+github: https://github.com/tnovau/react-circle-flags
+demo: https://tnovau.github.io/react-circle-flags/
+npm: https://www.npmjs.com/package/react-circle-flags
+install: `npm i react-circle-flags` or `yarn add react-circle-flags`
+tags:
+  - react
+  - flags
+  - countries
+  - circle
+  - round
+---
