@@ -4,7 +4,7 @@ description: :rocket: A React wrapper for: https://hatscripts.github.io/circle-f
 github: https://github.com/tnovau/react-circle-flags
 demo: https://tnovau.github.io/react-circle-flags/
 npm: https://www.npmjs.com/package/react-circle-flags
-install: `npm i react-circle-flags` or `yarn add react-circle-flags`
+install: react-circle-flags
 tags:
   - react
   - flags
